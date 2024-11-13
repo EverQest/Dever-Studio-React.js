@@ -75,17 +75,27 @@ export const ItemList = (type) => {
       }
       
       return (
-        <div className="card_hover" key={item.id}>
-          <div className="card">
-            <div className="price_container">
-              <span className="left_side" />
-              <span className="price">{price}</span>
-              <span className="right_side" />
-            </div>
+        <div className='card_container'>
+          <div className="card card_hover" key={item.id}>
+
             <Link to={`/product/${typeOf}/${name}/${item.id}/${imgSrc}/${price}`} className="img_card">
               <img src={`/images/${typeOf}/${imgSrc}`} alt={item.img_alt} />
             </Link>
-            <div className="card_name">{name}</div>
+          </div>
+          <div className='info_container'>
+            <div className='margin_left'>
+              <div className="card_name">{name}</div>
+              <div className='line'></div>
+              <div className="price_container">
+                <span className="price">{price}</span>
+            </div>
+            </div>
+            <div className='icons'>
+              <img className='cart_icon' src="/images/icons/heart.png" alt="heart_icon" />
+              <Link to={`/product/${typeOf}/${name}/${item.id}/${imgSrc}/${price}`}>
+                <img className='cart_icon' src="/images/icons/online-shopping.png" alt="cart_icon" />
+              </Link>
+            </div>
           </div>
         </div>
       );

@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Dever_logo_mini from '../source/DE.png';
+import { Ads } from "./Ads.jsx";
 
 export const Footer = () => {
     return (
@@ -9,7 +10,7 @@ export const Footer = () => {
             Дюжина
            <p className="pink">модних</p>
             речей, які ви заслужили!
-           </div>
+           </div> 
       <div className="main_footer">
         <div className="container">
           <div className="el_list_footer">
@@ -27,7 +28,7 @@ export const Footer = () => {
           <div className="info_footer">
             <div className="logo_footer">
               <img src={Dever_logo_mini} alt="DE_logo" />
-              <p>© 2023, Dever.com</p>
+              <p>© 2024, Dever.com</p>
             </div>
             <div className="text_footer">
               <div>E-MAIL:</div>

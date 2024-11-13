@@ -37,19 +37,19 @@ interface ProductName {
     {
         id: 1,
         name: { 
-            main: "4OpToBa DIO}i{uHA (Black)",
+            main: "4OpToBa DIO}i{uHA",
             cap: "Чорна класика",
             bag: "Чорна класика",
             pants: "Чорна класика",
             souvenir: "Термостакан DEver"
         },
         price: {
-            ts: "599 грн",
-            hoodie: "799 грн",
-            cap: "249 грн",
-            bag: "1499 грн",
-            pants: "1199 грн",
-            souvenir: "199 грн"
+            ts: "599 UAH",
+            hoodie: "799 UAH",
+            cap: "249 UAH",
+            bag: "1499 UAH",
+            pants: "1199 UAH",
+            souvenir: "199 UAH"
         },
         img: {
             img_ts: "t-s_black-4OpToBa DIO}i{uHA.png",
@@ -71,12 +71,12 @@ interface ProductName {
             souvenir: "Titus"
         },
         price: {
-            ts: "499 грн",
-            hoodie: "699 грн",
-            cap: "349 грн",
-            bag: "1999 грн",
-            pants: "1599 грн",
-            souvenir: "249 грн"
+            ts: "499 UAH",
+            hoodie: "699 UAH",
+            cap: "349 UAH",
+            bag: "1999 UAH",
+            pants: "1599 UAH",
+            souvenir: "249 UAH"
         },
         img: {
             img_ts: "t-s_pchela_toski.png",
@@ -97,11 +97,11 @@ interface ProductName {
             souvenir: "Flame"
         },
         price: {
-            ts: "599 грн",
-            hoodie: "799 грн",
-            cap: "299 грн",
-            bag: "1999 грн",
-            souvenir: "249 грн"
+            ts: "599 UAH",
+            hoodie: "799 UAH",
+            cap: "299 UAH",
+            bag: "1999 UAH",
+            souvenir: "249 UAH"
         },
         img: {
             img_ts: "t-s_pchela_toski_remastered.png",
@@ -120,10 +120,10 @@ interface ProductName {
             bag: "Flame",
         },
         price: {
-            ts: "799 грн",
-            hoodie: "999 грн",
-            cap: "249 грн",
-            bag: "1799 грн"
+            ts: "799 UAH",
+            hoodie: "999 UAH",
+            cap: "249 UAH",
+            bag: "1799 UAH"
         },
         img: {
             img_ts: "t-s_dimarik_flame.png",
@@ -141,10 +141,10 @@ interface ProductName {
             bag: "Titus",
         },
         price: {
-            ts: "649 грн",
-            hoodie: "849 грн",
-            cap: "249 грн",
-            bag: "2199 грн",
+            ts: "649 UAH",
+            hoodie: "849 UAH",
+            cap: "249 UAH",
+            bag: "2199 UAH",
         },
         img: {
              img_ts: "t-s_titus_logo.png",
@@ -162,10 +162,10 @@ interface ProductName {
             bag: "Stiker Titus"
         },
         price: {
-            ts: "649 грн",
-            hoodie: "849 грн",
-            cap: "349 грн",
-            bag: "1999 грн",
+            ts: "649 UAH",
+            hoodie: "849 UAH",
+            cap: "349 UAH",
+            bag: "1999 UAH",
         },
         img: {
             img_ts: "t-s_titus_logo_stikers.png",
@@ -179,14 +179,14 @@ interface ProductName {
         id: 7,
         name: { 
             main: "Королівська ніч",
-            cap: "Бджола Туги (білий)",
+            cap: "Бджола Туги",
             bag: "Frogus"
         },
         price: {
-            ts: "849 грн",
-            hoodie: "1099 грн",
-            cap: "299 грн",
-            bag: "2199 грн ",
+            ts: "849 UAH",
+            hoodie: "1099 UAH",
+            cap: "299 UAH",
+            bag: "2199 UAH ",
         },
         img: {
             img_ts: "t-s_king_night.png",
@@ -200,14 +200,14 @@ interface ProductName {
         id: 8,
         name: { 
             main: "Жива класика",
-            cap: "Бджола Туги (чорний)",
+            cap: "Бджола Туги",
             bag: "DEver",
         },
         price: {
-            ts: "199 грн",
-            hoodie: "399 грн",
-            cap: "299 грн",
-            bag: "1799 грн",
+            ts: "199 UAH",
+            hoodie: "399 UAH",
+            cap: "299 UAH",
+            bag: "1799 UAH",
         },
         img: {
             img_ts: "t-s_classic.png",

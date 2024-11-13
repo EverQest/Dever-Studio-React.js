@@ -1,10 +1,12 @@
 $img-path: "../source/bg_mainlogo.png";
 body {
   margin: 0px;
+  font-family: "Comfortaa", cursive;
   background-color: black;
+}
+#root {
   background-image: url($img-path);
   background-size: cover;
-  font-family: "Comfortaa", cursive;
   height: 100%;
 }
 .main_button {
@@ -24,9 +26,11 @@ body {
   left: 0;
   bottom: 0;
 }
+main {
+  padding: 200px 0px;
+}
 .wraper_main {
   position: relative;
-  height: 600px;
 }
 .main_tag {
   color: #ffffff59;
@@ -42,20 +46,23 @@ body {
 }
 .main_button a {
   color: black;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   text-decoration: none;
   padding: 15px 30px;
-  background-color: #ffffffcf;
+  background-color: rgba(255, 255, 255, 0.8117647059);
   font-size: 20px;
   font-weight: 600;
+  border-bottom: 5px solid black;
+  cursor: pointer;
 }
 .main_button a:hover {
 background-color: black;
+border-bottom: 5px solid white;
 color: white;
-transition: 0.3s;
-cursor: pointer;
+transition: 0.3s ease;
+
 }
 .container {
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
 }

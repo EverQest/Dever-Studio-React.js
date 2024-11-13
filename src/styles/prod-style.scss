@@ -11,28 +11,41 @@
 }
 
 /* //Меин контент */
+.card_container {
+  margin: 25px 0px;
+}
 .card_hover {
   box-shadow: none;
   border-radius: 10px;
-  margin: 15px;
+  margin: 5px;
+  transition: 0.3s;
 }
 .card_hover:hover {
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.521);
   background-color: rgba(255, 255, 255, 0.521);
-  transition: 0.3s;
 }
 .card {
-  border-radius: 10px;
+  border-radius: 2px;
   cursor: pointer;
-  padding: 5px;
-  background-color: #efefefba;
+  padding: 30px;
+  background-color: rgb(167 167 167 / 86%);
 }
 .price {
-  background-color: #fff;
-  display: block;
-  font-size: 25px;
-  padding-bottom: 5px;
-  font-family: "Exo 2", sans-serif;
+  font-size: 20px;
+  font-family: sans-serif;
+  padding: 0px 15px;
+  margin: 10px 0px;
+}
+.info_container {
+  background-color: white;
+  margin: 5px;
+  margin-top: 10px;
+  border-bottom: 5px solid black;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .img_card img {
   width: 330px;
@@ -42,25 +55,34 @@
   display: flex;
   justify-content: center;
 }
-.left_side {
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px 0px 0px;
-}
-.right_side {
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 0% 0% 50% 0%;
-}
 .price_container {
   display: flex;
   flex-direction: row;
 }
+.line {
+  width: 260px;
+  border-top: 1px solid black;
+}
+.margin_left {
+  margin-left: 10px;
+}
 .card_name {
   display: flex;
-  justify-content: center;
-  font-size: 20px;
-  padding: 20px;
+  justify-content: flex-start;
+  font-size: 18px;
+  padding: 15px;
+  padding-bottom: 5px;
+}
+.cart_icon {
+  width: 20px;
+  padding: 10px 10px 10px;
+  background-color: #949494bd;
+  margin-right: 15px;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.cart_icon:hover {
+  background-color: #686868ec;
 }
 
 .flex_direction {

@@ -16,19 +16,21 @@ function App() {
   return (
     <BrowserRouter>
     <Navbar />
-     <div className="container">
-      <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/ts' element={<Prod type={"ts"}/>} />
-          <Route path='/hoodie' element={<Prod type={"hoodie"}/>} />
-          <Route path='/cap' element={<Prod type={"cap"}/>} />
-          <Route path='/bag' element={<Prod type={"bag"}/>} />
-          <Route path='/pants' element={<Prod type={"pants"}/>} />
-          <Route path='/souvenir' element={<Prod type={"souvenir"}/>} />
-          <Route path='/faq' element={<Faq/>} />
-          <Route path='/product/:type/:name/:id/:img/:price' element={<PageToBuy />} />
-      </Routes>
-     </div>
+    <main>
+      <div className="container">
+       <Routes>
+            <Route path='/' element={<Home/>} />
+           <Route path='/ts' element={<Prod type={"ts"}/>} />
+           <Route path='/hoodie' element={<Prod type={"hoodie"}/>} />
+           <Route path='/cap' element={<Prod type={"cap"}/>} />
+           <Route path='/bag' element={<Prod type={"bag"}/>} />
+           <Route path='/pants' element={<Prod type={"pants"}/>} />
+           <Route path='/souvenir' element={<Prod type={"souvenir"}/>} />
+           <Route path='/faq' element={<Faq/>} />
+           <Route path='/product/:type/:name/:id/:img/:price' element={<PageToBuy />} />
+       </Routes>
+      </div>
+     </main>
     <Footer />
     </BrowserRouter>
   );

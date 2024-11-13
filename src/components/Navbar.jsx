@@ -6,13 +6,12 @@ export const Navbar = () => {
     <Fragment>
       <header>
         <div className="header_first">
-          <div className="header_main_logo">
-            <a href="/"
-              ><img src={Dever_logo} alt="logo_mini_black"
-            /></a>
-          </div>
+          <a href="/" className="header_main_logo">
+              <img src={Dever_logo} alt="logo_mini_black" />
+          </a>
         </div>
         <div className="header_second">
+           <a href="/cart" className="header_main_item_cart"><img className='cart_icon_header' src="/images/icons/online-shopping.png" alt="cart_icon" /></a>
           <ul className="header_main">
             <li><a href="/ts" className="header_main_item">Футболки</a></li>
             <li><a href="/hoodie" className="header_main_item">Худі</a></li>
