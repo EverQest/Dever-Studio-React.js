@@ -1,29 +1,31 @@
 import { React, useState, useEffect } from 'react';
+import { prodList } from '../data/data.ts';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 export const ItemList = (type) => {
-  let typeOf = type.type.type;
+  const typeOf = type.type.type;
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  // Функция для загрузки данных с сервера
-  const fetchProducts = async () => {
-    try {
-      const response = await axios.get('http://localhost:3001/api/products');
-      setProducts(response.data);
-      setLoading(false);
-    } catch (err) {
-      setError('Не удалось загрузить данные');
-      setLoading(false);
-    }
-  };
+    // Функция для загрузки данных с сервера
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/api/products');
+        setProducts(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError('Не удалось загрузить данные');
+        setLoading(false);
+      }
+    };
   
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-  
+    useEffect(() => {
+      fetchProducts();
+    }, []);
+
 
   if (loading) {
     return <div>Загрузка...</div>;
@@ -32,21 +34,21 @@ export const ItemList = (type) => {
   if (error) {
     return <div>{error}</div>;
   }
-
-  const filteredItems = products.filter((item) => {
+  // Filter the items based on the type
+  const filteredItems = prodList.filter((item) => {
     switch (typeOf) {
       case 'ts':
-        return item.price_ts !== '';
+        return item.price.ts !== '';
       case 'hoodie':
-        return item.price_hoodie !== '';
+        return item.price.hoodie !== '';
       case 'pants':
-        return item.price_pants !== '';
+        return item.price.pants !== '';
       case 'cap':
-        return item.price_cap !== '';
+        return item.price.cap !== '';
       case 'bag':
-        return item.price_bag !== '';
+        return item.price.bag !== '';
       case 'souvenir':
-        return item.price_souvenir !== '';
+        return item.price.souvenir !== '';
       default:
         return false;
     }
@@ -66,34 +68,34 @@ export const ItemList = (type) => {
 
       switch (typeOf) {
         case 'ts':
-          price = item.price_ts;
-          imgSrc = item.img_ts;
-          name = item.name_main;
+          price = item.price.ts;
+          imgSrc = item.img.img_ts;
+          name = item.name.main;
           break;
         case 'hoodie':
-          price = item.price_hoodie;
-          imgSrc = item.img_hoodie;
-          name = item.name_main;
+          price = item.price.hoodie;
+          imgSrc = item.img.img_hoodie;
+          name = item.name.main;
           break;
         case 'pants':
-          price = item.price_pants;
-          imgSrc = item.img_pants;
-          name = item.name_pants;
+          price = item.price.pants;
+          imgSrc = item.img.img_pants;
+          name = item.name.pants;
           break;
         case 'cap':
-          price = item.price_cap;
-          imgSrc = item.img_cap;
-          name = item.name_cap;
+          price = item.price.cap;
+          imgSrc = item.img.img_cap;
+          name = item.name.cap;
           break;
         case 'bag':
-          price = item.price_bag;
-          imgSrc = item.img_bag;
-          name = item.name_bag;
+          price = item.price.bag;
+          imgSrc = item.img.img_bag;
+          name = item.name.bag;
           break;
         case 'souvenir':
-          price = item.price_souvenir;
-          imgSrc = item.img_souvenir;
-          name = item.name_souvenir;
+          price = item.price.souvenir;
+          imgSrc = item.img.img_souvenir;
+          name = item.name.souvenir;
           break;
         default:
           price = '';
@@ -104,6 +106,7 @@ export const ItemList = (type) => {
       return (
         <div className='card_container'>
           <div className="card card_hover" key={item.id}>
+
             <Link to={`/product/${typeOf}/${name}/${item.id}/${imgSrc}/${price}`} className="img_card">
               <img src={`/images/${typeOf}/${imgSrc}`} alt={item.img_alt} />
             </Link>
@@ -127,6 +130,4 @@ export const ItemList = (type) => {
       );
     })
   );
-};
-
-export default ItemList;
+}

@@ -10,6 +10,8 @@ export const PageToBuy = () => {
   const [currentSize, setCurrentSize] = useState('M');
   const modalRef = useRef(null);
 
+  window.scrollTo(0, 0);
+
   const toggleSize = (size) => {
     if (currentSize === size) {
       setCurrentSize(null);

@@ -1,39 +1,4 @@
-interface ProductName {
-    main: string;
-    cap?: string;
-    bag?: string;
-    pants?: string;
-    souvenir?: string;
-  }
-  
-  interface ProductPrice {
-    ts: string;
-    hoodie: string;
-    cap?: string;
-    bag?: string;
-    pants?: string;
-    souvenir?: string;
-  }
-  
-  interface ProductImage {
-    img_ts: string;
-    img_hoodie: string;
-    img_cap?: string;
-    img_bag?: string;
-    img_pants?: string;
-    img_souvenir?: string;
-  }
-  
-  interface Product {
-    id: number;
-    name: ProductName;
-    price: ProductPrice;
-    img: ProductImage;
-    img_alt: string;
-  }
-  
-
-  export const prodList: Product[] = [
+const prodList = [
     {
         id: 1,
         name: { 
@@ -217,4 +182,45 @@ interface ProductName {
         },
         img_alt:"Classic",
     },
-]
+];
+
+module.exports = { prodList };
+
+// importData.js
+const mysql = require('mysql2');
+
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'admin', // замените на ваше имя пользователя MySQL
+  password: '12345', // замените на ваш пароль MySQL
+  database: 'products_db'
+});
+
+db.connect(err => {
+  if (err) throw err;
+  console.log('Подключено к базе данных');
+
+  prodList.forEach(product => {
+    const query = `
+      INSERT INTO products (
+        name_main, name_cap, name_bag, name_pants, name_souvenir,
+        price_ts, price_hoodie, price_cap, price_bag, price_pants, price_souvenir,
+        img_ts, img_hoodie, img_cap, img_bag, img_pants, img_souvenir,
+        img_alt
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+    const values = [
+      product.name.main, product.name.cap, product.name.bag, product.name.pants, product.name.souvenir,
+      product.price.ts, product.price.hoodie, product.price.cap, product.price.bag, product.price.pants, product.price.souvenir,
+      product.img.img_ts, product.img.img_hoodie, product.img.img_cap, product.img.img_bag, product.img.img_pants, product.img.img_souvenir,
+      product.img_alt
+    ];
+
+    db.query(query, values, (err) => {
+      if (err) throw err;
+    });
+  });
+
+  console.log('Данные успешно импортированы');
+  db.end();
+});

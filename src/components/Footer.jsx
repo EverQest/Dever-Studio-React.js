@@ -12,7 +12,7 @@ export const Footer = () => {
             речей, які ви заслужили!
            </div> 
       <div className="main_footer">
-        <div className="container">
+        <div className="footer_container">
           <div className="el_list_footer">
             <ul className="el_ul_footer">
               <li><a href="/ts" className="el_footer">Футболки</a></li>
