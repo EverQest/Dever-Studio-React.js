@@ -2,6 +2,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const port = 3001;
@@ -35,6 +36,30 @@ app.get('/api/products', (req, res) => {
     } else {
       res.json(results);
     }
+  });
+});
+
+// Маршрут для входа
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  db.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], (err, results) => {
+      if (err) {
+          return res.status(500).send('Ошибка базы данных');
+      }
+
+      if (results.length === 0) {
+          return res.status(400).send('Неверный логин или пароль');
+      }
+
+      const user = results[0];
+
+      // Создание токена
+      const token = jwt.sign({ id: user.id, username: user.username }, 'your_secret_key', {
+          expiresIn: '1h',
+      });
+
+      res.json({ message: 'Успешный вход', token });
   });
 });
 
