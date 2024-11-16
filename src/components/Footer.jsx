@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Dever_logo_mini from '../source/DE.png';
-import { Ads } from "./Ads.jsx";
 
 export const Footer = () => {
     return (
@@ -9,7 +8,7 @@ export const Footer = () => {
           <div className="quote_footer">
             Дюжина
            <p className="pink">модних</p>
-            речей, які ви заслужили!
+            речей, на які ви заслуговуєте!
            </div> 
       <div className="main_footer">
         <div className="footer_container">

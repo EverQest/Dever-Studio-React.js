@@ -41,10 +41,10 @@
     font-family: cursive;
     font-size: 15px;
     cursor: pointer;
+    transition: 0.5s all ease;
 }
-
 .login_form button:hover {
-    background-color: #45a049;
+    background-color: rgb(88, 88, 88);
 }
 
 .error_message {

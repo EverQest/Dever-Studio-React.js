@@ -28,20 +28,20 @@ export const Login = () => {
                 localStorage.setItem('token', data.token);
                 navigate('/');
             } else {
-                setErrorMessage(data.message || 'Ошибка входа');
+                setErrorMessage(data.message || 'Помилка входу');
             }
         } catch (error) {
-            setErrorMessage('Ошибка подключения к серверу');
+            setErrorMessage('Невірний логін або пароль');
             console.error(error);
         }
     };
 
     return (
         <div className="login_form">
-            <h2>Вход в аккаунт</h2>
+            <h2>Вхід в аккаунт</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="username">Имя пользователя</label>
+                    <label htmlFor="username">Ім'я користувача</label>
                     <input
                         type="text"
                         id="username"
@@ -60,10 +60,10 @@ export const Login = () => {
                         required
                     />
                 </div>
-                <button type="submit">Войти</button>
+                <button type="submit">Увійти</button>
             </form>
 
-            {errorMessage && <p className="error_message">{errorMessage}</p>} {/* Показать ошибку при неудачной попытке входа */}
+            {errorMessage && <p className="error_message">{errorMessage}</p>} 
         </div>
     );
 }
