@@ -12,6 +12,7 @@ import { Footer } from "./components/Footer";
 import { Faq } from "./components/Faq";
 import { PageToBuy } from "./components/PageToBuy";
 import { Login } from "./components/Log_in";
+import { Cart } from "./components/Cart";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
            <Route path='/souvenir' element={<Prod type={"souvenir"}/>} />
            <Route path='/faq' element={<Faq/>} />
            <Route path='/login' element={<Login/>} />
+           <Route path='/cart' element={<Cart/>} />
            <Route path='/product/:type/:name/:id/:img/:price' element={<PageToBuy />} />
        </Routes>
       </div>

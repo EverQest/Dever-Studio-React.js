@@ -39,6 +39,44 @@ app.get('/api/products', (req, res) => {
   });
 });
 
+// Маршрут для добавления товара в корзину
+app.post('/cart', (req, res) => {
+  const { userId, productId, quantity } = req.body;
+
+  if (!userId || !productId || !quantity) {
+    return res.status(400).json({ error: 'Необходимо указать userId, productId и quantity' });
+  }
+
+  const query = 'INSERT INTO cart (user_id, product_id, quantity) VALUES (?, ?, ?)';
+  db.query(query, [userId, productId, quantity], (err, result) => {
+    if (err) {
+      res.status(500).json({ error: 'Ошибка добавления в корзину' });
+    } else {
+      res.json({ message: 'Товар успешно добавлен в корзину' });
+    }
+  });
+});
+
+// Маршрут для получения данных корзины
+app.get('/cart', (req, res) => {
+  const userId = 1;
+
+  const query = `
+    SELECT cart.id, cart.quantity, products.name_main AS name, products.price_ts AS price, products.img_ts AS img 
+    FROM cart 
+    JOIN products ON cart.product_id = products.id 
+    WHERE cart.user_id = ?;
+  `;
+
+  db.query(query, [userId], (err, results) => {
+    if (err) {
+      res.status(500).json({ error: 'Ошибка получения данных корзины' });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
 // Маршрут для входа
 app.post('/login', (req, res) => {
   const { username, password } = req.body;

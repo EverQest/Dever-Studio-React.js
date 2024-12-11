@@ -60,6 +60,25 @@ export const ItemList = (type) => {
     renderedItems = filteredItems.slice(0, 3);
   }
 
+  // Функция для добавления товара в корзину
+  const handleAddToCart = async (productId) => {
+    try {
+      const userId = 1;
+      const quantity = 1;
+
+      await axios.post('http://localhost:3001/cart', {
+        userId,
+        productId,
+        quantity
+      });
+
+      console.log('Товар добавлен в корзину');
+      // Добавьте логику для уведомления пользователя или обновления UI
+    } catch (error) {
+      console.log('Ошибка при добавлении товара в корзину:', error);
+    }
+  };
+
   return (
     renderedItems.map((item) => {
       let price, imgSrc, name;
@@ -118,9 +137,7 @@ export const ItemList = (type) => {
             </div>
             <div className='icons'>
               <img className='cart_icon' src="/images/icons/heart.png" alt="heart_icon" />
-              <Link to={`/product/${typeOf}/${name}/${item.id}/${imgSrc}/${price}`}>
-                <img className='cart_icon' src="/images/icons/online-shopping.png" alt="cart_icon" />
-              </Link>
+              <img className='cart_icon' onClick={() => handleAddToCart(item.id)} src="/images/icons/cart.png" alt="cart_icon" />         
             </div>
           </div>
         </div>

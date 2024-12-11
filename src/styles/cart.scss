@@ -1,0 +1,19 @@
+.cart_item{
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+    padding: 25px;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin: 20px;
+}
+.cart_item_details{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+.cart_item_image{
+width: 300px;
+}
